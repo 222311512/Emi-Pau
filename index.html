@@ -20,6 +20,7 @@
       color: #d63384;
       font-size: 3em;
       margin-bottom: 40px;
+      text-align: center;
     }
 
     .btn {
@@ -57,6 +58,9 @@
       font-size: 1.2em;
       color: #d63384;
       z-index: 1000;
+      max-width: 90%;
+      max-height: 70vh;
+      overflow-y: auto;
     }
 
     .corazon {
@@ -133,16 +137,16 @@
   <button class="btn" id="noBtn" style="top: 60%; left: 45%;">No 💔</button>
 
   <div id="note">
-    ¡Sabía que dirías que sí jiji, porque yo también te extraño bastante!<br>
-
-    Hola mi niño bonito, paso a recordarte lo muchísimo que te amo y lo importante que eres para mi vida, desde que te conocí, mi mundo cambió. Tu sonrisa ilumina mis días y tu forma de ser me hace quererte cada vez más. 
-. Gracias por ser tú, por estar aquí conmigo siempre, por brindarme toda tu confianza, no pararía de decirte cuanto te amo, no dejaré de hacerlo bebé, eres muy especial en mi vida, me di un poco de tiempito para poder hacer esto que ya desde hace mucho quería hacerlo, pero no se me daba la oportunidad jiji, me gusta verte feliz siempre siempre y quiero que siempre nos tengamos en mente,  se que el apoyo mutuo siempre va a existir mi vida, te amo con todo mi ser, me encanta que eres un niño muy inteligente muy dedicado en todas las cositas que haces, me encanta tu forma de ser y la forma en la que eres conmigo, siempre voy a recordarte que tienes que dar lo mejor de ti y siempre voy a ayudarte en todo lo posible y lo imposible, al final todo se puede lograr, se que podemos llegar muy lejos si nos lo proponemos y damos lo mejor para nosotros corazón, i love you bebe!.<br><br>
-    Eres el mejor, en ABSOLUTAMENTE TODO!!<br><br>
+    ¡Sabía que dirías que sí jiji, porque yo también te extraño bastante!<br><br>
+    Hola mi niño bonito, paso a recordarte lo muchísimo que te amo y lo importante que eres para mi vida, desde que te conocí, mi mundo cambió. Tu sonrisa ilumina mis días y tu forma de ser me hace quererte cada vez más. Gracias por ser tú, por estar aquí conmigo siempre, por brindarme toda tu confianza, no pararía de decirte cuanto te amo, no dejaré de hacerlo bebé, eres muy especial en mi vida. <br><br>
+    Me gusta verte feliz siempre siempre y quiero que siempre nos tengamos en mente. Sé que el apoyo mutuo siempre va a existir mi vida, te amo con todo mi ser, me encanta que eres un niño muy inteligente y muy dedicado en todas las cositas que haces. Me encanta tu forma de ser y la forma en la que eres conmigo. <br><br>
+    Siempre voy a recordarte que tienes que dar lo mejor de ti y siempre voy a ayudarte en todo lo posible y lo imposible. Al final, todo se puede lograr. Sé que podemos llegar muy lejos si nos lo proponemos y damos lo mejor para nosotros corazón. <br><br>
+    I love you, bebé. Eres el mejor, en ABSOLUTAMENTE TODO!!<br><br>
     Te amo con todo mi ser. 💞
   </div>
 
   <!-- Música de fondo -->
-  <audio id="bgMusic" src="c:\Users\abisa\Downloads\fondo.mp3.mp3" loop></audio>
+  <audio id="bgMusic" src="fondo.mp3" loop></audio>
 
   <script>
     const noBtn = document.getElementById("noBtn");
@@ -150,51 +154,5 @@
     const note = document.getElementById("note");
     const music = document.getElementById("bgMusic");
 
-    // Reproducir música tras la primera interacción táctil (necesario en móviles)
-    function enableAudio() {
-      music.play().catch(() => {});
-      document.removeEventListener('click', enableAudio);
-      document.removeEventListener('touchstart', enableAudio);
-    }
-
-    document.addEventListener('click', enableAudio);
-    document.addEventListener('touchstart', enableAudio);
-
     // Botón No se mueve
-    noBtn.addEventListener("mouseenter", () => {
-      const x = Math.random() * (window.innerWidth - 100);
-      const y = Math.random() * (window.innerHeight - 50);
-      noBtn.style.left = `${x}px`;
-      noBtn.style.top = `${y}px`;
-    });
-
-    // Botón Sí
-    yesBtn.addEventListener("click", () => {
-      note.style.display = "block";
-      music.play();
-
-      // Corazones
-      setInterval(() => {
-        const heart = document.createElement("div");
-        heart.classList.add("corazon");
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.animationDuration = (Math.random() * 5 + 5) + "s";
-        document.body.appendChild(heart);
-        setTimeout(() => heart.remove(), 10000);
-      }, 300);
-
-      // Brillitos
-      setInterval(() => {
-        const sparkle = document.createElement("div");
-        sparkle.classList.add("sparkle");
-        sparkle.style.left = Math.random() * 100 + "vw";
-        sparkle.style.top = Math.random() * 100 + "vh";
-        sparkle.style.animationDuration = (Math.random() * 2 + 1) + "s";
-        document.body.appendChild(sparkle);
-        setTimeout(() => sparkle.remove(), 3000);
-      }, 150);
-    });
-  </script>
-
-</body>
-</html>
+    noBtn.addEventListene
